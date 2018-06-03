@@ -1,0 +1,27 @@
+/* pages/bookinfo/bookinfo.wxss */
+.book_body{
+  display: flex;
+  flex-direction: column;
+} 
+.item{
+  display: flex;
+  border-bottom: 2rpx solid #fff;
+  width: 100%;
+  flex-direction: column;
+}
+.item .title{
+  display: flex;
+  font-weight: bold;
+  font-size: 14px;
+  color: #1A8fb4;
+}
+.item .author{
+  display: flex;
+  font-size: 14px;
+  color:#1A8fb4;
+}
+.item .pulisher{
+  display: flex;
+  font-size: 14px;
+  color: #1A8fb4;
+}

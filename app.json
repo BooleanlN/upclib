@@ -1,0 +1,49 @@
+{
+  "tabBar": {
+    "selectedColor": "#000000",
+    "color": "#696969",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "我的书架",
+        "iconPath": "pages/images/bookshelf_pre.png",
+        "selectedIconPath": "pages/images/bookshelf.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "全网搜书",
+        "iconPath": "pages/images/search_pre.png",
+        "selectedIconPath": "pages/images/sousuo.png"
+      },
+      {
+        "pagePath": "pages/lib/lib",
+        "text": "图书馆",
+        "iconPath": "pages/images/lib_pre.png",
+        "selectedIconPath": "pages/images/library.png"
+      }
+    ]
+  },
+  "pages": [
+   "pages/main/main",
+    "pages/test/test",
+    "pages/douban/douban",
+    "pages/desbook/desbook",
+    "pages/logs/logs",
+    "pages/lib/lib",
+    "pages/bookinfo/bookinfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "UPCLib",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true,
+    "networkTimeout": {
+      "request": 60000,
+      "downloadFile": 10000
+    },
+    "debug": true
+  }
+}

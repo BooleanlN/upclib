@@ -1,0 +1,11 @@
+<view class="book_body">
+<text style="color:#1A8fb4;font-size:20px;padding-bottom:10px;">书籍状态:</text>
+<text>--------------------------------------------------</text>
+<view wx:for="{{bookinfo}}" class="item" >
+<text  class="title">书刊状态：{{item.skzt}}</text>
+<text class="title">索书号：{{item.ssh}}</text>
+<text class="title">馆藏地：{{item.gcd}}</text>
+<text class="title">条码号：{{item.tmh}}</text>
+<text>--------------------------------------------------</text>
+</view>
+</view>

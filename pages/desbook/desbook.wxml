@@ -1,0 +1,76 @@
+<!--pages/desbook/desbook.wxml-->
+<!-- 选中图书的信息 -->
+<view>
+  <view style='margin:0 auto;flex-direction:row;display:inline-flex;justify-content:space-around;width:100%;'>
+      <!-- 图片 -->
+      <view style='width:40%;margin-left:10px;'>
+        <image src='{{bookinfo.images.large}}' style='width:140px;height:160px;box-shadow:3px 3px 3px #888888;'></image>
+      </view>
+      <!-- 书名 -->
+      <view style='width:60%;line-height:15px;'>
+          <text style='font-weight:bold;fon t-size:16px;'>
+          {{bookinfo.title}}
+          </text>
+          <!-- 书作者 -->
+          <view wx:for="{{bookinfo.author}}" style='font-size:14px;margin-top:10px;'>
+                <text>{{item}}</text>
+          </view>
+          <!-- 书的简述 -->
+          <text style='font-size:12px;color:#bfbfbf'>
+          {{bookinfo.summary}}
+          </text>
+          <text style='font-weight:bold;font-size:16px;'>
+          {{bookinfo.rating.average}}分
+          </text>
+      </view>
+  </view>
+</view>
+  <!-- 下部的tab选项 -->
+ <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+              <!-- 我的评论 -->
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}" style='background-color:#f2f2f2;padding-top:0px;'>
+                 <view wx:for="{{mycont}}" style='background-color:#f2f2f2;'>
+                    <view style='border:1px solid #ccc;border-radius:10px;background-color:#ffffff;width:80%;height:100px;margin: 0 auto;margin-top:10px;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;'>
+                        <text>{{item.contents}}\n</text>
+                        <view style='padding-top:50px;float:left;'>
+                        <text style='font-weight:bold;'>{{item.username}}</text>
+                        <text style='color:#bfbfbf;font-size:12px;'> {{item.time}}</text>
+                        </view>
+                        <view style='float:right' bindtap='dianzan'>
+                            <image src='../images/zan.png' style='width:50px;height:50px;' ></image>
+                        </view>
+                    </view>
+                  </view>
+                </view>
+                <!-- 热门评论 -->
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}" style='background-color:#f2f2f2;padding-top:0px;'>
+                 <view wx:for="{{mycont}}" style='background-color:#f2f2f2;'>
+                    <view style='border:1px solid #ccc;border-radius:10px;background-color:#ffffff;width:80%;height:100px;margin: 0 auto;margin-top:10px;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;'>
+                        <text>{{item.contents}}\n</text>
+                        <view style='padding-top:50px;float:left;'>
+                        <text style='font-weight:bold;'>{{item.username}}</text>
+                        <text style='color:#bfbfbf;font-size:12px;'> {{item.time}}</text>
+                        </view>
+                        <view style='float:right' bindtap='dianzan'>
+                            <image src='../images/zan.png' style='width:50px;height:50px;' ></image>
+                        </view>
+                    </view>
+                  </view>
+                </view>
+                <!-- 评论 -->
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                  <textarea style='width:90%;heigth:500px;border:1px solid #ccc;margin:0 auto;margin-top:10px;' bindinput="inputcont">
+                  </textarea>
+                  <button type='primary' style='width:90%;margin-top:10px;' bindtap='pinglun'>发布评论</button>
+                </view>
+            </view>
+        </view>

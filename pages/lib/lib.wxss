@@ -1,0 +1,47 @@
+/* pages/lib/lib.wxss */
+  .weui-tab__content{
+      padding-top: 10px;
+      text-align: center;
+  }
+  .userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+  .publisher{
+    color: white;
+  }
+  .userinfo-nickname {
+    color: #aaa;
+  }
+
+  .usermotto {
+    margin-top: 200px;
+  }
+  .more{
+    width: 400rpx;
+    margin: 0 auto;
+    line-height: 30px;
+    color: white;
+    background: orange;
+  }
+  .allpage{
+    color: #ccc;
+    font-size: 30rpx;
+    float: right
+  }
+  .tz{
+    border: 1px solid white;
+    border-radius: 5px;
+    float: right;
+    color: white;
+    width:80px;
+    height: 3px;
+  }

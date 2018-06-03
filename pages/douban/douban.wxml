@@ -1,0 +1,46 @@
+<view>
+<!-- 输入框 -->
+<view class="page__bd" style='padding-bottom:5px;'>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindconfirm="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+      </view>
+    <!-- </view> -->
+  <view wx:for="{{bookinfo}}">
+    <!-- 搜索结果列表展示 -->
+    <!-- 点击跳转带index + 书名 -->
+    <navigator style='border-bottom:1px solid #ccc;flex-direction:row;display:inline-flex;justify-content:space-around;width:100%;padding-top:5px;' class='flex-wrp' hover-class="none" hover-stop-propagation="true" >
+      <view class='flex-item' style='width:20%;margin-left:10px;'>
+          <image src='{{item.images.large}}' mode='' style='width:70px;height:80px;box-shadow:3px 3px 3px #888888;'>
+          </image> 
+      </view> 
+      <!-- 书名 -->
+       <view class='flex-item' style='width:60%;line-height:20px;'>
+          <text>
+          {{item.title}}
+          </text>
+          <!-- 作者 -->
+          <view wx:for="{{item.author}}" style='font-size:12px;color:#bfbfbf;'>
+                <text>{{item}}</text>
+          </view>
+          <button size="mini" type='default' plain='true' bindtap='addshelf' data-book ="{{index}}">加入书架</button>
+      </view> 
+      <view style='text-align:center;line-height:80px;font-size:16px;color:#c76114'>
+      <navigator url='../desbook/desbook?bookid={{index}}&bookname={{inputVal}}' hover-class='none'>查看详情</navigator>
+      </view>
+    </navigator>
+  </view>
+</view>
